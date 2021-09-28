@@ -6,3 +6,4 @@ package com.slicingflow.source;
  */
 public interface Source {
 }
+
