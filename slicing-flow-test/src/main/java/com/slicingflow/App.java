@@ -1,20 +1,14 @@
 package com.slicingflow;
 
-import java.io.FileNotFoundException;
+import com.slicingflow.zerocopy.NioClientHandler;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
-import java.net.SocketOption;
-import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import java.nio.charset.Charset;
-import java.util.Scanner;
-import java.util.Set;
 
 /**
  *

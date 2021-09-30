@@ -1,4 +1,4 @@
-package com.slicingflow;
+package com.slicingflow.zerocopy;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
