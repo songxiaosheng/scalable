@@ -1,4 +1,8 @@
 package com.slicingflow.flow;
 
-public class AggregationFlow {
+/**
+ * @author songxiaosheng
+ */
+public class AggregationFlow extends AbstractFlow{
+
 }

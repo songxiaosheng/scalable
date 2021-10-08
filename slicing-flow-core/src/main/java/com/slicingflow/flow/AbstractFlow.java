@@ -24,4 +24,19 @@ public abstract class AbstractFlow implements Flow{
      * source handle result
      */
    private Sink sink;
+
+    @Override
+    public Flow source() {
+        return null;
+    }
+
+    @Override
+    public Flow process() {
+        return null;
+    }
+
+    @Override
+    public void sink() {
+
+    }
 }
