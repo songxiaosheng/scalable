@@ -1,10 +1,10 @@
 package com.slicingflow.flow;
 
 
+import com.slicingflow.process.Processor;
 import com.slicingflow.sink.Sink;
+import com.slicingflow.source.Source;
 
-import javax.annotation.processing.Processor;
-import java.nio.channels.Pipe;
 
 /**
  *
@@ -16,15 +16,15 @@ public interface Flow {
     /**
      * @return
      */
-    Flow source();
+    Flow source(Source source);
 
     /**
      * @return
      */
-    Flow process();
+    Flow process(Processor process);
 
     /**
      *
      */
-    void sink();
+    Sink sink();
 }

@@ -2,41 +2,45 @@ package com.slicingflow.flow;
 
 
 import com.slicingflow.pipeline.Pipeline;
+import com.slicingflow.process.Processor;
 import com.slicingflow.sink.Sink;
 import com.slicingflow.source.Source;
 
 /**
  * @author songxiaosheng
  */
-public abstract class AbstractFlow implements Flow{
+public abstract class AbstractFlow implements Flow {
 
     /**
      * source need to be handle
      */
-   private Source source;
+    private Source source;
 
     /**
      * source process pipeline
      */
-   private Pipeline pipeline;
+    private Pipeline pipeline;
 
     /**
      * source handle result
      */
-   private Sink sink;
+    private Sink sink;
 
     @Override
-    public Flow source() {
-        return null;
+    public Flow source(Source source) {
+        this.source = source;
+        return this;
     }
 
     @Override
-    public Flow process() {
-        return null;
+    public Flow process(Processor processor) {
+        processor.process(source);
+        return this;
     }
 
     @Override
-    public void sink() {
+    public Sink sink() {
 
+        return sink;
     }
 }
