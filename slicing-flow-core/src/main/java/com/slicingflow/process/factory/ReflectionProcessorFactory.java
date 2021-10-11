@@ -5,7 +5,7 @@ import com.slicingflow.process.Processor;
 /**
  * @author songxiaosheng
  */
-public class ReflectionProcessorFactory<T> extends AbstractProcessorFactory {
+public class ReflectionProcessorFactory  extends AbstractProcessorFactory {
     //    private final Logger logger = LoggerFactory.getLogger(ReflectionProcessFactory.class);
     @Override
     public Processor createProcessor(ProcessorMeta processorMeta) {
