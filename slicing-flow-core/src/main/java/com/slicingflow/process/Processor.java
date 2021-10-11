@@ -1,5 +1,6 @@
 package com.slicingflow.process;
 
+import com.slicingflow.sink.Sink;
 import com.slicingflow.source.Source;
 
 /**
@@ -7,5 +8,5 @@ import com.slicingflow.source.Source;
  * @author songxiaosheng
  */
 public interface Processor {
-    void process(Source source);
+    Sink process(Source source);
 }

@@ -34,7 +34,7 @@ public abstract class AbstractFlow implements Flow {
 
     @Override
     public Flow process(Processor processor) {
-        processor.process(source);
+        sink = processor.process(source);
         return this;
     }
 
