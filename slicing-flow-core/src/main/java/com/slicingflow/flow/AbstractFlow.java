@@ -35,7 +35,12 @@ public abstract class AbstractFlow implements Flow {
     @Override
     public Flow process(Processor processor) {
         sink = processor.process(source);
+        transfer(sink,source);
         return this;
+    }
+
+    public void transfer(Sink sink,Source source) {
+
     }
 
     @Override

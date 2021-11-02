@@ -4,9 +4,17 @@ package com.slicingflow.source;
 /**
  * @author songxiaosheng
  */
-public abstract class AbstractSource implements Source {
+public abstract class AbstractSource<T> implements Source<T> {
+
+    private T source;
+
     @Override
-    public Object getSource() {
-        return null;
+    public T getSource() {
+        return source;
+    }
+
+    @Override
+    public void setSource(T source) {
+        this.source = source;
     }
 }
