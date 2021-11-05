@@ -16,10 +16,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 public class CuratorFactory {
-    private final ConcurrentHashMap<String, CuratorFramework> curatorClientCache = new ConcurrentHashMap<>();
 
     private CuratorFactory() {
 
+    }
+
+    public static CuratorFactory getInstance() {
+        return new CuratorFactory();
     }
 
     public CuratorFramework createCuratorFramework(String name, ZookeeperConfiguration zookeeperConfiguration) {
@@ -50,31 +53,10 @@ public class CuratorFactory {
                     });
         }
         CuratorFramework curatorFramework = builder.build();
-        start(name, zookeeperConfiguration);
-        curatorClientCache.put(name, curatorFramework);
+
         return curatorFramework;
     }
 
-    public void start(String name, ZookeeperConfiguration zookeeperConfiguration) {
-        CuratorFramework curatorFramework = curatorClientCache.get(name);
-        curatorFramework.start();
-
-        try {
-            if (!curatorFramework.blockUntilConnected(zookeeperConfiguration.getMaxSleepTimeMilliseconds()
-                    * zookeeperConfiguration.getMaxRetries(), TimeUnit.MILLISECONDS)) {
-                curatorFramework.close();
-                throw new KeeperException.OperationTimeoutException();
-            }
-            //CHECKSTYLE:OFF
-        } catch (final Exception ex) {
-            //CHECKSTYLE:ON
-        }
-    }
-
-    public void stop() {
-
-    }
-    //singleton
 
 
 }
