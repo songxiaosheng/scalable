@@ -1,4 +1,4 @@
-package link.elastic.job.core.handler;
+package link.elastic.scalabel.core.handler;
 
 public class SimpleJobHandler implements JobHandler{
 }

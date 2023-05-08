@@ -1,4 +1,4 @@
-package link.elastic.job.core.config;
+package link.elastic.scalabel.core.config;
 
 public class SimpleJobConfig extends AbstractJobConfig{
 }

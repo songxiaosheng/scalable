@@ -1,6 +1,6 @@
-package link.elastic.job.core.container;
+package link.elastic.scalabel.core.container;
 
-import link.elastic.job.core.config.JobConfig;
+import link.elastic.scalabel.core.config.JobConfig;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

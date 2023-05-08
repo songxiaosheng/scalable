@@ -1,4 +1,4 @@
-package link.elastic.job.core.container;
+package link.elastic.scalabel.core.container;
 
 public abstract class AbstractJobContainer implements JobContainer{
 
