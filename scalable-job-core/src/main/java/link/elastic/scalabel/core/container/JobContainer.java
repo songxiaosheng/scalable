@@ -4,9 +4,9 @@ import link.elastic.scalabel.core.config.JobConfig;
 
 public interface JobContainer {
 
-    void add(JobConfig jobConfig);
+    boolean add(JobConfig jobConfig);
 
-    void remove(JobConfig jobConfig);
+    boolean remove(JobConfig jobConfig);
 
 
 }
