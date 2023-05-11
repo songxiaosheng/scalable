@@ -22,4 +22,12 @@ public abstract class AbstractJobConfig implements JobConfig{
     public void setJobHandler(JobHandler jobHandler) {
         this.jobHandler = jobHandler;
     }
+
+    @Override
+    public String toString() {
+        return "AbstractJobConfig{" +
+                "jobName='" + jobName + '\'' +
+                ", jobHandler=" + jobHandler +
+                '}';
+    }
 }

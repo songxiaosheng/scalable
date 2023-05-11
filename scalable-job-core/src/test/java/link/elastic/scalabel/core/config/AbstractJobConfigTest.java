@@ -1,26 +1,24 @@
 package link.elastic.scalabel.core.config;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AbstractJobConfigTest {
 
     @org.junit.jupiter.api.Test
     void getJobName() {
-        new SimpleJobConfig().getJobName();
+        new QuartzJobConfig().getJobName();
     }
 
     @org.junit.jupiter.api.Test
     void setJobName() {
-        new SimpleJobConfig().setJobName("test");
+        new QuartzJobConfig().setJobName("test");
     }
 
     @org.junit.jupiter.api.Test
     void getJobHandler() {
-        new SimpleJobConfig().getJobHandler();
+        new QuartzJobConfig().getJobHandler();
     }
 
     @org.junit.jupiter.api.Test
     void setJobHandler() {
-        new SimpleJobConfig().setJobHandler(null);
+        new QuartzJobConfig().setJobHandler(null);
     }
 }

@@ -1,5 +1,7 @@
 package link.elastic.scalabel.core.handler;
 
+import link.elastic.scalabel.core.config.JobConfig;
+
 public interface JobHandler {
-        void handle();
+        void execute(JobConfig jobConfig);
 }
