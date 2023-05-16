@@ -7,6 +7,8 @@ import link.elastic.scalabel.core.scheduler.QuartzJobScheduler;
 import org.junit.jupiter.api.Test;
 import org.quartz.SchedulerException;
 
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class JobBootstrapTest {
@@ -18,7 +20,7 @@ class JobBootstrapTest {
     }
 
     @Test
-    void collector() {
+    void collector() throws SQLException, ClassNotFoundException {
         Bootstrap bootstrap = JobBootstrap.getInstance();
         bootstrap.collector(new H2JobCollector());
         assertNotNull(bootstrap);
@@ -43,5 +45,14 @@ class JobBootstrapTest {
         Bootstrap bootstrap = JobBootstrap.getInstance();
         bootstrap.scheduler(new QuartzJobScheduler());
         assertNotNull(bootstrap);
+    }
+
+    @Test
+    void bootstrapJob() throws SchedulerException, SQLException, ClassNotFoundException {
+        JobBootstrap.getInstance()
+                .collector(new H2JobCollector())
+                .config(new QuartzJobConfig())
+                .container(new DefaultJobContainer())
+                .scheduler(new QuartzJobScheduler());
     }
 }
