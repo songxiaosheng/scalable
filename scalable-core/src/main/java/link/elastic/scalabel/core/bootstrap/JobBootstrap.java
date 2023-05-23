@@ -40,6 +40,10 @@ public class JobBootstrap implements Bootstrap {
         return this;
     }
 
+    @Override
+    public void start() {
+        this.scheduler.start();
+    }
 
 
 }

@@ -13,4 +13,6 @@ public interface Bootstrap {
     Bootstrap container(JobContainer container);
 
     Bootstrap scheduler(JobScheduler scheduler);
+
+    void start();
 }

@@ -14,7 +14,15 @@ public class QuartzJobScheduler extends AbstractJobScheduler {
 
     public QuartzJobScheduler() throws SchedulerException {
         scheduler = initScheduler();
-        scheduler.start();
+
+    }
+    @Override
+    public void start() {
+        try {
+            scheduler.start();
+        } catch (SchedulerException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Scheduler initScheduler() throws SchedulerException {
