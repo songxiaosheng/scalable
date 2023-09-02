@@ -1,0 +1,1 @@
+package link.elastic.scalable.core.resource;
